@@ -1,10 +1,9 @@
-require 'fakefs'
-require File.join(File.dirname(__FILE__), *%w[.. .. lib movie_sort command_line])
+require 'moviesort/command_line'
 
 ### givens
-
-Given /^a folder "([^\"]*)" containing the movie|file "([^\"]*)"$/ do |parent, file|
-  FileUtils.mkpath(parent)
+  
+Given /^a folder "([^\"]*)" containing the file "([^\"]*)"$/ do |parent, file|
+  FileUtils.mkdir_p(parent)
   FileUtils.touch(File.join(parent, file))
 end
 
@@ -14,8 +13,8 @@ end
 
 ## whens
 
-When /^I run MovieSort with the options "([^\"]*)"$/ do |options|
-  MovieSort::CommandLine.parse(options).run
+When /^I run Moviesort with the options "([^\"]*)"$/ do |options|
+  Moviesort::CommandLine.parse(options).run
 end
 
 ## thens

@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+lib_path = File.expand_path(File.join(File.dirname(__FILE__), *%w[.. lib]))
+$LOAD_PATH.unshift(lib_path) unless $LOAD_PATH.include?(lib_path)
+
+require 'moviesort/command_line'
+Moviesort::CommandLine.new.run
