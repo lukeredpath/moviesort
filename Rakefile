@@ -5,6 +5,7 @@ Jeweler::Tasks.new do |gemspec|
   gemspec.summary = "Small command-line utility for sorting downloaded TV shows and movies"
   gemspec.email = "luke@lukeredpath.co.uk"
   gemspec.authors = ["Luke Redpath"]
+  gemspec.executables << 'moviesort'
 end
 
 Jeweler::GemcutterTasks.new
