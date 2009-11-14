@@ -6,3 +6,7 @@ Jeweler::Tasks.new do |gemspec|
   gemspec.email = "luke@lukeredpath.co.uk"
   gemspec.authors = ["Luke Redpath"]
 end
+
+Jeweler::GemcutterTasks.new
+
+task :release => "gemcutter:release"
