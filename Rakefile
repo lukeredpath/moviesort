@@ -9,4 +9,6 @@ end
 
 Jeweler::GemcutterTasks.new
 
-task :release => "gemcutter:release"
+task :push_tiny  => ['version:bump:patch', 'gemcutter:release']
+task :push_minor => ['version:bump:minor', 'gemcutter:release']
+task :push_major => ['version:bump:major', 'gemcutter:release']
