@@ -1,0 +1,6 @@
+Moviesort is a script to sort and file away your TV shows and movies
+
+Usage: moviesort [options]
+  --source, -s <s>:   Source directory (default: .)
+  --target, -t <s>:   Target directory (default: .)
+        --help, -h:   Show this message
