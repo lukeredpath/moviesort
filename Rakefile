@@ -6,6 +6,7 @@ Jeweler::Tasks.new do |gemspec|
   gemspec.email = "luke@lukeredpath.co.uk"
   gemspec.authors = ["Luke Redpath"]
   gemspec.executables << 'moviesort'
+  gemspec.add_dependency('trollop')
 end
 
 Jeweler::GemcutterTasks.new
