@@ -1,4 +1,5 @@
 require 'jeweler'
+require 'rake/testtask'
 
 Jeweler::Tasks.new do |gemspec|
   gemspec.name = "moviesort"
@@ -14,3 +15,9 @@ Jeweler::GemcutterTasks.new
 task :push_tiny  => ['version:bump:patch', 'gemcutter:release']
 task :push_minor => ['version:bump:minor', 'gemcutter:release']
 task :push_major => ['version:bump:major', 'gemcutter:release']
+
+Rake::TestTask.new('test') do |t|
+  t.libs << "test" << "lib"
+  t.pattern = "test/**/*_test.rb"
+end
+task :default => :test
