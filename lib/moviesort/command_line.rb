@@ -1,5 +1,6 @@
 require 'trollop'
 require 'moviesort/sorter'
+#require 'moviesort/notifiers/twitter'
 
 module Moviesort
   class CommandLine
