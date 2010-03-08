@@ -13,7 +13,9 @@ module Moviesort
     
     def self.parse(filename)
       parser = Parser.new(filename)
-      new(filename, *parser.parse)
+      if components = parser.parse
+        new(filename, *components)
+      end
     end
     
     def target_path
@@ -38,7 +40,7 @@ module Moviesort
           /(.*)\s(\d{1})(\d{2})/
         ]
         match = patterns.map { |regex| @filename.match(regex) }.compact.first
-        extract_data_from_pattern_match(match)
+        extract_data_from_pattern_match(match) if match
       end
 
       def extract_data_from_pattern_match(match)

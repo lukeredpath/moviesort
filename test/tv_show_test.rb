@@ -45,6 +45,10 @@ class TvShowTest < Test::Unit::TestCase
       assert_equal 1, @tv_show.season
       assert_equal 2, @tv_show.episode                  
     end
+    
+    should "return nil if format is unrecognized" do
+      assert_nil Moviesort::TVShow.parse("dont know what to do with this!.txt")
+    end
   end
   
 end
